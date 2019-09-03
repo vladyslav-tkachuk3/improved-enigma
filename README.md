@@ -2,8 +2,7 @@
 
 **- Окно регистрации**:
 
-![alt text](https://github.com/necron7/improved-enigma/blob/master/login_window.jpg)
-
+<img align="center" src="https://github.com/necron7/improved-enigma/blob/master/login_window.jpg">
 
 **- Окно чата**:
 
