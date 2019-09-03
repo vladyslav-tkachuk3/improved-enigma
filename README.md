@@ -56,7 +56,10 @@ id, username, password
 - user1 (имя пользователя) user1 (пароль)
 - user2 (имя пользователя) user2 (пароль)
 
-Для работы клиента нужно установить модули:
-- cryptography 
+
+Для реализации шифрования клиенту и серверу нужно установить модуль cryptography:
 https://pypi.org/project/cryptography/
+
+Также для создания графического интерфейса клиенту нужно установить модуль tkinter:
+https://docs.python.org/3/library/tkinter.html
 
