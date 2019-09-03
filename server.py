@@ -62,7 +62,7 @@ class Server(threading.Thread, metaclass=Singleton):
     def run(self):
         super(Server, self).run()
 
-        self._initialize_database()
+        self.initialize_database()
 
         while not self.__stop_event.is_set():
             with self.__wait_condition:
@@ -154,7 +154,7 @@ class Server(threading.Thread, metaclass=Singleton):
         if database_name.endswith('.db'):
             self.__database_name = database_name
 
-    def _initialize_database(self):
+    def initialize_database(self):
         connection = sqlite3.connect(self.__database_name)
         connection.cursor().execute("CREATE TABLE IF NOT EXISTS `users` " +
                                     "(mem_id INTEGER NOT NULL PRIMARY KEY  AUTOINCREMENT, username TEXT, password TEXT)")
@@ -208,11 +208,14 @@ def stop_cmd():
 
 
 def set_database_cmd():
-    if len(sys.argv) != 3 or not sys.argv[2].endswith('.db'):
-        help_cmd()
-    else:
+    database_name = input()
+    print(database_name)
+    if database_name.endswith('.db'):
         server = Server()
-        server.database_name = sys.argv[2]
+        server.database_name = database_name
+        server.initialize_database()
+    else:
+        help_cmd()
 
 
 def exit_cmd():
@@ -227,7 +230,7 @@ Commands:
 \t {name} : <run server>
 \t {name} start : <start server> 
 \t {name} stop : <stop server>
-\t {name} database [database_name.db] : <select database>
+\t {name} database : <select database>
 \t {name} exit : <shutdown server>
 \t {name} help : <get this information>'''
           .format(name=os.path.basename(sys.argv[0])))
