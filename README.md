@@ -1,5 +1,6 @@
 # improved-enigma
 
+![alt text](https://github.com/necron7/improved-enigma/blob/master/login_window.jpg)
 ![alt text](https://github.com/necron7/improved-enigma/blob/master/chat_window.jpg)
 
 Чат состоит из сервера и клиентов. Чат работает таким образом, что клиент отправляет зашифрованное пользовательское сообщение на сервер. Сервер, в свою очередь, получив пользовательское сообщение, отправляет его всем подключенным клиентам.
