@@ -56,4 +56,7 @@ id, username, password
 - user1 (имя пользователя) user1 (пароль)
 - user2 (имя пользователя) user2 (пароль)
 
+Для работы клиента нужно установить модули:
+- cryptography 
+https://pypi.org/project/cryptography/
 
